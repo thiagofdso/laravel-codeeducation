@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-});
+Route::get('/','PostsController@index');
 
-Route::get('ola/{nome}','TestController@index');
-Route::get('notas','TestController@notas');
-Route::get('posts','PostsController@index');
+Route::get('admin','PostsAdminController@index');
