@@ -27,6 +27,6 @@ class PostsAdminController extends Controller
     }
     public function store(Request $request){
         $this->post->create($request->all());
-        return redirect('admin');
+        return redirect()->route('admin.index');
     }
 }
