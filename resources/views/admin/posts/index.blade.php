@@ -10,12 +10,14 @@
             <tr>
                 <th>ID</th>
                 <th>Tittle</th>
+                <th>Tags</th>
                 <th>Action</th>
             </tr>
         @foreach($posts as $post)
             <tr>
                 <td>{{$post->id}}</td>
                 <td>{{$post->title}}</td>
+                <td>{{$post->tagList}}</td>
                 <td>
                     <a href="{{route('admin.edit',['id'=>$post->id])}}" class="btn btn-default">Edit</a>
                     <a href="{{route('admin.destroy',['id'=>$post->id])}}" class="btn btn-danger">Delete</a></td>

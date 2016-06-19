@@ -13,10 +13,14 @@
 
 Route::get('/','PostsController@index');
 
-Route::get('admin',['as'=>'admin.index', 'uses'=>'PostsAdminController@index']);
-Route::get('admin/create',['as'=>'admin.create', 'uses'=>'PostsAdminController@create']);
-Route::post('admin/store',['as'=>'admin.store', 'uses'=>'PostsAdminController@store']);
-Route::get('admin/edit/{id}',['as'=>'admin.edit', 'uses'=>'PostsAdminController@edit']);
-Route::put('admin/update/{id}',['as'=>'admin.update', 'uses'=>'PostsAdminController@update']);
-Route::get('admin/destroy/{id}',['as'=>'admin.destroy', 'uses'=>'PostsAdminController@destroy']);
-Route::get('admin/cancel',['as'=>'admin.cancel', 'uses'=>'PostsAdminController@cancel']);
+Route::group(['prefix'=>'admin'],function(){
+    Route::group(['prefix'=>'posts'],function() {
+        Route::get('', ['as' => 'admin.index', 'uses' => 'PostsAdminController@index']);
+        Route::get('create', ['as' => 'admin.create', 'uses' => 'PostsAdminController@create']);
+        Route::post('store', ['as' => 'admin.store', 'uses' => 'PostsAdminController@store']);
+        Route::get('edit/{id}', ['as' => 'admin.edit', 'uses' => 'PostsAdminController@edit']);
+        Route::put('update/{id}', ['as' => 'admin.update', 'uses' => 'PostsAdminController@update']);
+        Route::get('destroy/{id}', ['as' => 'admin.destroy', 'uses' => 'PostsAdminController@destroy']);
+        Route::get('cancel', ['as' => 'admin.cancel', 'uses' => 'PostsAdminController@cancel']);
+    });
+});
