@@ -20,6 +20,7 @@
 
         <div class="form-group">
                 {!! Form::submit('Create Post', ['class'=>'btn btn-primary']) !!}
+                <a href="{{route('admin.cancel')}}" class="btn btn-info">Cancel</a>
         </div>
 
 

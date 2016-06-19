@@ -36,5 +36,12 @@ class PostsAdminController extends Controller
         $post = $this->post->find($id)->update($request->all());
         return redirect()->route('admin.index');
     }
+    public function destroy($id){
+        $post = $this->post->find($id)->delete();
+        return redirect()->route('admin.index');
+    }
+    public function cancel(){
+        return redirect()->route('admin.index');
+    }
 
 }
