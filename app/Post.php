@@ -14,4 +14,8 @@ class Post extends Model
     protected function comments(){
         return $this->hasMany('App\Comment');
     }
+
+    protected  function tags(){
+        return $this->belongsToMany('App\Tag','posts_tags');
+    }
 }
