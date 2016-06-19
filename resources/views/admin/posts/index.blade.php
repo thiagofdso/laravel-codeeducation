@@ -15,9 +15,8 @@
                 <td>{{$post->title}}</td>
                 <td></td>
             </tr>
-
-
         @endforeach
         </table>
+        {{$posts->render()}}
     </div>
 @endsection
