@@ -10,6 +10,6 @@ class TestController extends Controller
 {
     //
     protected function index($nome){
-        return view('test.index');
+        return view('test.index',['nome'=>$nome]);
     }
 }
