@@ -3,9 +3,9 @@
     <div class="container">
         <h1>Anotações</h1>
         <ul>
-            <li>Anotação 1</li>
-            <li>Anotação 2</li>
-            <li>Anotação 3</li>
+            @foreach($notas as $nota)
+                <li>{{$nota}}</li>
+            @endforeach
         </ul>
     </div>
 @stop
