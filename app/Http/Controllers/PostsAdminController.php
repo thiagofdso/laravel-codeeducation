@@ -18,6 +18,7 @@ class PostsAdminController extends Controller
     }
     
     public function index(){
-        return view('admin.posts.index');
+        $posts = $this->post->all();
+        return view('admin.posts.index',compact('posts'));
     }
 }
