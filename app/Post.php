@@ -11,11 +11,11 @@ class Post extends Model
         'title', 'content',
     ];
 
-    protected function comments(){
+    public function comments(){
         return $this->hasMany('App\Comment');
     }
 
-    protected  function tags(){
+    public  function tags(){
         return $this->belongsToMany('App\Tag','posts_tags');
     }
 }
