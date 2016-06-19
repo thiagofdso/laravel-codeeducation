@@ -5,6 +5,11 @@
         @foreach($posts as $post)
             <h2>{{$post->title}}</h2>
             <p>{{$post->content}}</p>
+            @foreach($post->comments as $comment)
+                <b>Name: </b>{{$comment->name}}<br>
+                <b>Comment:</b>{{$comment->comment}}
+
+            @endforeach
             <hr>
         @endforeach
     </div>
