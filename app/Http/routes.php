@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::get('teste','TestController@index');
+Route::get('ola/{nome}','TestController@index');
